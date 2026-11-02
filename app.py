@@ -42,10 +42,6 @@ def prohibido(error):
 def no_encontrado(error):
     return render_template('404.html'), 404
 
-if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5000, debug=False)
-
-
 
 # Consultar la nota almacenada en el servidor
 @app.route('/api/nota', methods=['GET'])
@@ -80,4 +76,11 @@ def cambiar_nota():
         "mensaje": "Nota modificada correctamente",
         "alumno": alumno
     })
+
+
+
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=5000, debug=False)
+
+
 
