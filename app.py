@@ -6,7 +6,7 @@ PROTEGIDO = False
 
 alumno = {
     "nombre": "Juan",
-    "nota": 7
+    "nota": 2
 }
 
 @app.after_request
@@ -21,14 +21,14 @@ def inicio():
 
 @app.route('/notas')
 def notas():
-    # Simulamos una persona no autenticada. Nunca usar datos reales.
     if PROTEGIDO:
         abort(403)
+
     return render_template(
-    'notas.html',
-    protegido=PROTEGIDO,
-    alumno=alumno
-)
+        'notas.html',
+        protegido=PROTEGIDO,
+        alumno=alumno
+    )
 
 @app.route('/estado')
 def estado():
